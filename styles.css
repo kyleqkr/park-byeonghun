@@ -346,6 +346,7 @@ img {
   line-height: 1;
   letter-spacing: normal;
   font-weight: 400;
+  z-index: 2;
 }
 
 .fullscreen-nav {
@@ -355,6 +356,7 @@ img {
   font-size: 2rem;
   line-height: 1;
   color: var(--text);
+  z-index: 2;
 }
 
 .fullscreen-prev {
@@ -402,6 +404,7 @@ img {
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1;
+  z-index: 2;
 }
 
 .site-footer {
