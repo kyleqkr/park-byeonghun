@@ -1,0 +1,316 @@
+{
+  "file": {
+    "name": "Seoyeon Archive Base",
+    "pages": [
+      "00_Foundation",
+      "01_Desktop",
+      "02_Mobile",
+      "03_Assets"
+    ]
+  },
+  "frames": {
+    "desktop": {
+      "name": "Desktop Home / 1440",
+      "width": 1440,
+      "background": "#050505",
+      "layoutMode": "VERTICAL",
+      "paddingTop": 40,
+      "paddingRight": 16,
+      "paddingBottom": 80,
+      "paddingLeft": 16,
+      "itemSpacing": 28,
+      "contentWidth": 1320,
+      "grid": {
+        "columns": 12,
+        "margin": 60,
+        "gutter": 18
+      }
+    },
+    "mobile": {
+      "name": "Mobile Home / 390",
+      "width": 390,
+      "background": "#050505",
+      "layoutMode": "VERTICAL",
+      "paddingTop": 18,
+      "paddingRight": 9,
+      "paddingBottom": 40,
+      "paddingLeft": 9,
+      "itemSpacing": 14,
+      "grid": {
+        "columns": 4,
+        "margin": 12,
+        "gutter": 12
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Panel/Base",
+      "fill": "#F6F3EC",
+      "padding": 18,
+      "radius": 0
+    },
+    {
+      "name": "Panel/Hero",
+      "fill": "#F6F3EC",
+      "paddingTop": 18,
+      "paddingRight": 18,
+      "paddingBottom": 22,
+      "paddingLeft": 18,
+      "radius": 0
+    },
+    {
+      "name": "Image/Frame",
+      "radius": 0,
+      "clipContent": true
+    },
+    {
+      "name": "List/Row",
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 10,
+      "paddingTop": 8,
+      "paddingBottom": 8,
+      "strokeTop": {
+        "color": "#111111",
+        "weight": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Hero Panel",
+      "component": "Panel/Hero",
+      "layout": {
+        "columns": 2,
+        "ratio": [
+          1.1,
+          1.3
+        ],
+        "gap": 18
+      },
+      "content": [
+        {
+          "type": "meta",
+          "style": "Mono/XS",
+          "items": [
+            "SEOYEON ARCHIVE",
+            "PHOTO / TEXT",
+            "ISSUE 01"
+          ]
+        },
+        {
+          "type": "heading",
+          "style": "Display/XL",
+          "text": "PORTFOLIO FOR IMAGES, TEXT, AND QUIET OBSERVATION."
+        },
+        {
+          "type": "image",
+          "component": "Image/Frame",
+          "asset": "assets/10.jpg",
+          "minHeight": 520
+        },
+        {
+          "type": "body",
+          "style": "Body/S",
+          "labelStyle": "Mono/XS",
+          "label": "selected works",
+          "text": "이미지와 문장을 프로젝트 설명보다 먼저 보이게 두는 개인 아카이브."
+        }
+      ]
+    },
+    {
+      "name": "Index Panel",
+      "component": "Panel/Base",
+      "layout": {
+        "columns": 2,
+        "ratio": [
+          0.9,
+          1.1
+        ],
+        "gap": 18
+      },
+      "content": [
+        {
+          "type": "list",
+          "label": "index",
+          "labelStyle": "Mono/XS",
+          "rowComponent": "List/Row",
+          "items": [
+            {
+              "number": "01",
+              "title": "Posters and notes"
+            },
+            {
+              "number": "02",
+              "title": "Spatial documents"
+            },
+            {
+              "number": "03",
+              "title": "Visual essays"
+            },
+            {
+              "number": "04",
+              "title": "Travel fragments"
+            },
+            {
+              "number": "05",
+              "title": "Writing archive"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "component": "Image/Frame",
+          "asset": "assets/11.jpg",
+          "minHeight": 540
+        }
+      ]
+    },
+    {
+      "name": "Statement Panel",
+      "component": "Panel/Base",
+      "layout": {
+        "columns": 3,
+        "ratio": [
+          180,
+          1,
+          0.9
+        ],
+        "gap": 18
+      },
+      "content": [
+        {
+          "type": "label",
+          "style": "Mono/XS",
+          "text": "statement"
+        },
+        {
+          "type": "heading",
+          "style": "Display/L",
+          "text": "LESS DETAIL. MORE SCALE, SPACE, AND RHYTHM."
+        },
+        {
+          "type": "image",
+          "component": "Image/Frame",
+          "asset": "assets/12.jpg",
+          "minHeight": 360
+        }
+      ]
+    },
+    {
+      "name": "Spread Panel",
+      "component": "Panel/Base",
+      "layout": {
+        "columns": 2,
+        "ratio": [
+          1.2,
+          0.8
+        ],
+        "gap": 18
+      },
+      "content": [
+        {
+          "type": "image",
+          "component": "Image/Frame",
+          "asset": "assets/13.jpg",
+          "minHeight": 620
+        },
+        {
+          "type": "stack",
+          "gap": 18,
+          "items": [
+            {
+              "type": "label",
+              "style": "Mono/XS",
+              "text": "feature"
+            },
+            {
+              "type": "heading",
+              "style": "Heading/M",
+              "text": "Projects are presented like spreads, not cards."
+            },
+            {
+              "type": "image",
+              "component": "Image/Frame",
+              "asset": "assets/14.jpg",
+              "minHeight": 280
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tags Panel",
+      "component": "Panel/Base",
+      "layout": {
+        "columns": 2,
+        "ratio": [
+          0.95,
+          1.05
+        ],
+        "gap": 18
+      },
+      "content": [
+        {
+          "type": "heading",
+          "style": "Display/L",
+          "labelStyle": "Mono/XS",
+          "label": "archive tags",
+          "text": "SEOUL\nTOKYO\nJEJU\nBUSAN\nOSAKA"
+        },
+        {
+          "type": "image",
+          "component": "Image/Frame",
+          "asset": "assets/15.jpg",
+          "minHeight": 440
+        }
+      ]
+    },
+    {
+      "name": "Contact Panel",
+      "component": "Panel/Base",
+      "layout": {
+        "columns": 3,
+        "ratio": [
+          180,
+          1,
+          "auto"
+        ],
+        "gap": 18
+      },
+      "content": [
+        {
+          "type": "label",
+          "style": "Mono/XS",
+          "text": "contact"
+        },
+        {
+          "type": "heading",
+          "style": "Heading/M",
+          "text": "AVAILABLE FOR PHOTO, EDITORIAL, AND VISUAL RESEARCH PROJECTS."
+        },
+        {
+          "type": "links",
+          "style": "Mono/XS",
+          "items": [
+            "hello@seoyeonarchive.com",
+            "Instagram"
+          ]
+        }
+      ]
+    }
+  ],
+  "assets": [
+    "assets/10.jpg",
+    "assets/11.jpg",
+    "assets/12.jpg",
+    "assets/13.jpg",
+    "assets/14.jpg",
+    "assets/15.jpg"
+  ],
+  "notes": [
+    "Figma does not natively generate a full design from arbitrary JSON without a plugin.",
+    "Use figma-tokens.json with Tokens Studio if you want direct style import.",
+    "Use figma-layout-spec.json as a build sheet for frames, auto layout, and image placement."
+  ]
+}

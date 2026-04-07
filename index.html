@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Park Byeonghun</title>
+    <meta
+      name="description"
+      content="A color that makes the city pause. A minimal photo portfolio."
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#home-view">PARK BYEONGHUN</a>
+        <button class="about-link" type="button" id="about-button">ABOUT</button>
+      </header>
+
+      <section class="about-panel hidden" id="about-panel" aria-hidden="true">
+        <p>
+          site under construction
+        </p>
+      </section>
+
+      <section class="view home-view" id="home-view" data-view="home">
+        <div class="home-layout">
+          <div class="home-copy">
+            <p class="home-label">PHOTOS</p>
+            <p class="home-meta">Personal project</p>
+            <div class="home-heading-row">
+              <span class="home-index">1</span>
+              <h1 class="home-title">A color that makes the city pause</h1>
+            </div>
+            <button class="home-date" id="cover-trigger" type="button" aria-label="Open photo series">
+              April 7,
+              <br />
+              2026
+            </button>
+          </div>
+          <button class="home-thumb" id="cover-trigger-image" type="button" aria-label="Open photo series">
+            <img src="./assets/flowers/IMG_2911.JPG" alt="Pink flowers in front of a building" />
+          </button>
+        </div>
+
+        <div class="category-layout ceramics-layout">
+          <div class="category-copy">
+            <p class="home-label">CERAMICS</p>
+            <div class="ceramic-row ceramic-row-primary">
+              <div class="ceramic-title-wrap">
+                <span class="home-index">1</span>
+                <h2 class="ceramic-title">Mini Moon Jar</h2>
+              </div>
+              <p class="ceramic-date">March, 2026</p>
+              <div class="ceramic-thumb ceramic-thumb-jar" aria-hidden="true"></div>
+              <span class="ceramic-side-index">2</span>
+            </div>
+
+            <div class="ceramic-row ceramic-row-secondary">
+              <div class="ceramic-title-wrap ceramic-title-wrap-secondary">
+                <h2 class="ceramic-title">Cups 01–04</h2>
+              </div>
+              <p class="ceramic-date">March, 2026</p>
+              <div class="ceramic-thumb ceramic-thumb-cups" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view detail-view hidden" id="detail-view" data-view="detail" aria-hidden="true">
+        <div class="detail-gallery" id="detail-gallery"></div>
+      </section>
+
+      <section class="view fullscreen-view hidden" id="fullscreen-view" data-view="fullscreen" aria-hidden="true">
+        <button class="fullscreen-close" id="fullscreen-close" type="button" aria-label="Close fullscreen image">
+          BACK
+        </button>
+        <div class="fullscreen-frame">
+          <img id="fullscreen-image" src="" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <template id="detail-item-template">
+      <button class="detail-item" type="button">
+        <img class="detail-image" src="" alt="" />
+      </button>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
