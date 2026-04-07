@@ -22,6 +22,21 @@
   </head>
   <body>
     <main class="site-shell">
+      <div class="global-marquee" aria-hidden="true">
+        <div class="global-marquee-track">
+          <div class="global-marquee-group">
+            <span>Work in progress</span>
+            <span>Work in progress</span>
+            <span>Work in progress</span>
+          </div>
+          <div class="global-marquee-group">
+            <span>Work in progress</span>
+            <span>Work in progress</span>
+            <span>Work in progress</span>
+          </div>
+        </div>
+      </div>
+
       <header class="site-header">
         <a class="brand" href="#home-view">PARK BYEONGHUN</a>
         <button class="about-link" type="button" id="about-button">ABOUT</button>
@@ -37,41 +52,33 @@
         <div class="home-layout">
           <div class="home-copy">
             <p class="home-label">PHOTOS</p>
-            <p class="home-meta">Personal project</p>
-            <div class="home-heading-row">
+            <div class="home-flow-row">
               <span class="home-index">1</span>
               <h1 class="home-title">A color that makes the city pause</h1>
+              <button class="home-date" id="cover-trigger" type="button" aria-label="Open photo series">
+                April 7, 2026
+              </button>
+              <button class="home-thumb" id="cover-trigger-image" type="button" aria-label="Open photo series">
+                <img src="./assets/flowers/IMG_2911.JPG" alt="Pink flowers in front of a building" />
+              </button>
             </div>
-            <button class="home-date" id="cover-trigger" type="button" aria-label="Open photo series">
-              April 7,
-              <br />
-              2026
-            </button>
           </div>
-          <button class="home-thumb" id="cover-trigger-image" type="button" aria-label="Open photo series">
-            <img src="./assets/flowers/IMG_2911.JPG" alt="Pink flowers in front of a building" />
-          </button>
         </div>
 
         <div class="category-layout ceramics-layout">
           <div class="category-copy">
             <p class="home-label">CERAMICS</p>
             <div class="ceramic-row ceramic-row-primary">
-              <div class="ceramic-title-wrap">
+              <div class="ceramic-flow-row">
                 <span class="home-index">1</span>
                 <h2 class="ceramic-title">Mini Moon Jar</h2>
+                <p class="ceramic-date">March, 2026</p>
+                <div class="ceramic-thumb ceramic-thumb-jar" aria-hidden="true"></div>
+                <span class="ceramic-side-index">2</span>
+                <h2 class="ceramic-title ceramic-inline-title">Cups 01–04</h2>
+                <p class="ceramic-date">March, 2026</p>
+                <div class="ceramic-thumb ceramic-thumb-cups" aria-hidden="true"></div>
               </div>
-              <p class="ceramic-date">March, 2026</p>
-              <div class="ceramic-thumb ceramic-thumb-jar" aria-hidden="true"></div>
-              <span class="ceramic-side-index">2</span>
-            </div>
-
-            <div class="ceramic-row ceramic-row-secondary">
-              <div class="ceramic-title-wrap ceramic-title-wrap-secondary">
-                <h2 class="ceramic-title">Cups 01–04</h2>
-              </div>
-              <p class="ceramic-date">March, 2026</p>
-              <div class="ceramic-thumb ceramic-thumb-cups" aria-hidden="true"></div>
             </div>
           </div>
         </div>
@@ -85,9 +92,17 @@
         <button class="fullscreen-close" id="fullscreen-close" type="button" aria-label="Close fullscreen image">
           BACK
         </button>
+        <button class="fullscreen-nav fullscreen-prev" id="fullscreen-prev" type="button" aria-label="Previous image">
+          &larr;
+        </button>
         <div class="fullscreen-frame">
-          <img id="fullscreen-image" src="" alt="" />
+          <img class="fullscreen-slide is-active" id="fullscreen-image-current" src="" alt="" />
+          <img class="fullscreen-slide" id="fullscreen-image-next" src="" alt="" />
         </div>
+        <button class="fullscreen-nav fullscreen-next" id="fullscreen-next" type="button" aria-label="Next image">
+          &rarr;
+        </button>
+        <p class="fullscreen-caption" id="fullscreen-caption">April 7, 2026</p>
       </section>
     </main>
 
