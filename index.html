@@ -42,10 +42,21 @@
         <button class="about-link" type="button" id="about-button">ABOUT</button>
       </header>
 
-      <section class="about-panel hidden" id="about-panel" aria-hidden="true">
-        <p>
-          site under construction
-        </p>
+      <section class="view about-view hidden" id="about-view" data-view="about" aria-hidden="true">
+        <div class="about-page">
+          <div class="about-grid">
+            <div class="about-column">
+              <p class="about-label">LINKS</p>
+              <a class="about-item" href="https://www.instagram.com/parkbyeonghun/" target="_blank" rel="noreferrer">Instagram</a>
+              <a class="about-item" href="https://brunch.co.kr/@bottlehun" target="_blank" rel="noreferrer">Brunch</a>
+            </div>
+            <div class="about-column">
+              <p class="about-label">CONTACT</p>
+              <a class="about-item" href="tel:+821045029207">+82 10 4502 9207</a>
+              <a class="about-item" href="mailto:bhpark.design@gmail.com">bhpark.design@gmail.com</a>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="view home-view" id="home-view" data-view="home">
@@ -53,14 +64,14 @@
           <div class="home-copy">
             <p class="home-label">PHOTOS</p>
             <div class="home-flow-row">
-              <span class="home-index">1</span>
-              <h1 class="home-title">A color that makes the city pause</h1>
-              <button class="home-date" id="cover-trigger" type="button" aria-label="Open photo series">
-                April 7, 2026
-              </button>
+              <div class="home-title-group">
+                <span class="home-index">1</span>
+                <h1 class="home-title">A color that makes the city pause</h1>
+              </div>
               <button class="home-thumb" id="cover-trigger-image" type="button" aria-label="Open photo series">
-                <img src="./assets/flowers/IMG_2911.JPG" alt="Pink flowers in front of a building" />
+                <img src="./assets/photos/city-pause/00.JPG" alt="Pink flowers in front of a building" />
               </button>
+              <p class="home-date">(April 2026)</p>
             </div>
           </div>
         </div>
@@ -72,12 +83,22 @@
               <div class="ceramic-flow-row">
                 <span class="home-index">1</span>
                 <h2 class="ceramic-title">Mini Moon Jar</h2>
-                <p class="ceramic-date">March, 2026</p>
-                <div class="ceramic-thumb ceramic-thumb-jar" aria-hidden="true"></div>
+                <button class="ceramic-thumb ceramic-thumb-jar" id="ceramic-jar-trigger" type="button" aria-label="Open Mini Moon Jar image">
+                  <img src="./assets/photos/ceramics/mini-moon-jar/cover.jpg" alt="Mini Moon Jar ceramic piece" />
+                </button>
+                <p class="ceramic-date">(March 2026)</p>
                 <span class="ceramic-side-index">2</span>
                 <h2 class="ceramic-title ceramic-inline-title">Cups 01–04</h2>
-                <p class="ceramic-date">March, 2026</p>
-                <div class="ceramic-thumb ceramic-thumb-cups" aria-hidden="true"></div>
+                <button class="ceramic-thumb ceramic-thumb-cups" id="ceramic-cups-trigger" type="button" aria-label="Open Cups 01-04 image">
+                  <img src="./assets/photos/ceramics/cups/cover.jpg" alt="Cups 01-04 ceramic set" />
+                </button>
+                <p class="ceramic-date">(March 2026)</p>
+                <span class="ceramic-side-index">3</span>
+                <h2 class="ceramic-title ceramic-inline-title">Plate</h2>
+                <button class="ceramic-thumb ceramic-thumb-plate" id="ceramic-plate-trigger" type="button" aria-label="Open Plate image">
+                  <img src="./assets/photos/ceramics/plate/IMG_3400.jpg" alt="Plate ceramic piece" />
+                </button>
+                <p class="ceramic-date">(March 2026)</p>
               </div>
             </div>
           </div>
@@ -104,6 +125,10 @@
         </button>
         <p class="fullscreen-caption" id="fullscreen-caption">April 7, 2026</p>
       </section>
+
+      <footer class="site-footer">
+        <p>&copy; 2026 Park Byeonghun</p>
+      </footer>
     </main>
 
     <template id="detail-item-template">

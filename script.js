@@ -1,27 +1,50 @@
 const photos = [
   {
-    src: "./assets/flowers/IMG_2911.JPG",
+    src: "./assets/photos/city-pause/00.JPG",
     alt: "Pink flowers and a bird in front of a glass building",
-    caption: "April 7, 2026",
+    title: "A color that makes the city pause",
+    date: "Apr. 2026",
   },
   {
-    src: "./assets/flowers/IMG_2902.JPG",
+    src: "./assets/photos/city-pause/01.JPG",
     alt: "Red flowers in green leaves under bright sun",
-    caption: "April 7, 2026",
+    title: "A color that makes the city pause",
+    date: "Apr. 2026",
   },
   {
-    src: "./assets/flowers/IMG_2911.JPG",
+    src: "./assets/photos/city-pause/02.JPG",
     alt: "Pink flowers hanging in front of a modern facade",
-    caption: "April 7, 2026",
+    title: "A color that makes the city pause",
+    date: "Apr. 2026",
   },
   {
-    src: "./assets/flowers/IMG_2900.JPG",
+    src: "./assets/photos/city-pause/03.JPG",
     alt: "Pink flowers and shadows on a gray wall",
-    caption: "April 7, 2026",
+    title: "A color that makes the city pause",
+    date: "Apr. 2026",
+  },
+  {
+    src: "./assets/photos/city-pause/04.JPG",
+    alt: "Pink flowers framed against a modern building",
+    title: "A color that makes the city pause",
+    date: "Apr. 2026",
+  },
+  {
+    src: "./assets/photos/city-pause/05.JPG",
+    alt: "Clusters of pink flowers against glass and shadow",
+    title: "A color that makes the city pause",
+    date: "Apr. 2026",
+  },
+  {
+    src: "./assets/photos/city-pause/07.JPG",
+    alt: "Pink flowers pausing against a quiet city facade",
+    title: "A color that makes the city pause",
+    date: "Apr. 2026",
   },
 ];
 
 const views = {
+  about: document.querySelector("#about-view"),
   home: document.querySelector("#home-view"),
   detail: document.querySelector("#detail-view"),
   fullscreen: document.querySelector("#fullscreen-view"),
@@ -29,8 +52,10 @@ const views = {
 
 const detailGallery = document.querySelector("#detail-gallery");
 const detailItemTemplate = document.querySelector("#detail-item-template");
-const coverTrigger = document.querySelector("#cover-trigger");
 const coverTriggerImage = document.querySelector("#cover-trigger-image");
+const ceramicJarTrigger = document.querySelector("#ceramic-jar-trigger");
+const ceramicCupsTrigger = document.querySelector("#ceramic-cups-trigger");
+const ceramicPlateTrigger = document.querySelector("#ceramic-plate-trigger");
 const fullscreenFrame = document.querySelector(".fullscreen-frame");
 const fullscreenImageCurrent = document.querySelector("#fullscreen-image-current");
 const fullscreenImageNext = document.querySelector("#fullscreen-image-next");
@@ -39,13 +64,35 @@ const fullscreenClose = document.querySelector("#fullscreen-close");
 const fullscreenPrev = document.querySelector("#fullscreen-prev");
 const fullscreenNext = document.querySelector("#fullscreen-next");
 const aboutButton = document.querySelector("#about-button");
-const aboutPanel = document.querySelector("#about-panel");
 const brandLink = document.querySelector(".brand");
 
 let currentFullscreenIndex = 0;
 let swipeStartX = 0;
 let swipeStartY = 0;
 let isPointerDown = false;
+let fullscreenCollection = photos;
+let returnView = "detail";
+
+const ceramics = [
+  {
+    src: "./assets/photos/ceramics/mini-moon-jar/cover.jpg",
+    alt: "Mini Moon Jar ceramic piece",
+    title: "Mini Moon Jar",
+    date: "Mar. 2026",
+  },
+  {
+    src: "./assets/photos/ceramics/cups/cover.jpg",
+    alt: "Cups 01-04 ceramic set",
+    title: "Cups 01-04",
+    date: "Feb. 2026",
+  },
+  {
+    src: "./assets/photos/ceramics/plate/IMG_3400.jpg",
+    alt: "Plate ceramic piece",
+    title: "Plate",
+    date: "Jan. 2026",
+  },
+];
 
 function setView(nextView) {
   Object.entries(views).forEach(([key, element]) => {
@@ -56,15 +103,23 @@ function setView(nextView) {
 }
 
 function updateFullscreen(index) {
-  fullscreenImageCurrent.src = photos[index].src;
-  fullscreenImageCurrent.alt = photos[index].alt;
-  fullscreenCaption.textContent = photos[index].caption;
+  fullscreenImageCurrent.src = fullscreenCollection[index].src;
+  fullscreenImageCurrent.alt = fullscreenCollection[index].alt;
+  const { title, date } = fullscreenCollection[index];
+  const year = date ? date.match(/\b\d{4}\b/)?.[0] ?? "" : "";
+  fullscreenCaption.textContent = year ? `${title},\u00A0${year}` : title;
   fullscreenImageCurrent.classList.add("is-active");
   fullscreenImageNext.classList.remove("is-active", "is-incoming");
+
+  const showNav = fullscreenCollection.length > 1;
+  fullscreenPrev.classList.toggle("hidden", !showNav);
+  fullscreenNext.classList.toggle("hidden", !showNav);
 }
 
-function openFullscreen(index) {
+function openFullscreen(index, collection = photos) {
+  fullscreenCollection = collection;
   currentFullscreenIndex = index;
+  returnView = views.detail.classList.contains("hidden") ? "home" : "detail";
   updateFullscreen(index);
   setView("fullscreen");
 }
@@ -79,11 +134,14 @@ function jumpToIndex(nextIndex) {
 }
 
 function showNextImage() {
-  jumpToIndex((currentFullscreenIndex + 1) % photos.length);
+  jumpToIndex((currentFullscreenIndex + 1) % fullscreenCollection.length);
 }
 
 function showPreviousImage() {
-  jumpToIndex((currentFullscreenIndex - 1 + photos.length) % photos.length);
+  jumpToIndex(
+    (currentFullscreenIndex - 1 + fullscreenCollection.length) %
+      fullscreenCollection.length
+  );
 }
 
 fullscreenFrame.addEventListener("pointerdown", (event) => {
@@ -136,12 +194,20 @@ photos.forEach((photo, index) => {
   detailGallery.appendChild(fragment);
 });
 
-coverTrigger.addEventListener("click", () => {
+coverTriggerImage.addEventListener("click", () => {
   setView("detail");
 });
 
-coverTriggerImage.addEventListener("click", () => {
-  setView("detail");
+ceramicJarTrigger.addEventListener("click", () => {
+  openFullscreen(0, [ceramics[0]]);
+});
+
+ceramicCupsTrigger.addEventListener("click", () => {
+  openFullscreen(0, [ceramics[1]]);
+});
+
+ceramicPlateTrigger.addEventListener("click", () => {
+  openFullscreen(0, [ceramics[2]]);
 });
 
 brandLink.addEventListener("click", (event) => {
@@ -150,7 +216,7 @@ brandLink.addEventListener("click", (event) => {
 });
 
 fullscreenClose.addEventListener("click", () => {
-  setView("detail");
+  setView(returnView);
 });
 
 fullscreenPrev.addEventListener("click", () => {
@@ -162,18 +228,12 @@ fullscreenNext.addEventListener("click", () => {
 });
 
 aboutButton.addEventListener("click", () => {
-  const isHidden = aboutPanel.classList.toggle("hidden");
-  aboutPanel.setAttribute("aria-hidden", String(isHidden));
+  setView("about");
 });
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !views.fullscreen.classList.contains("hidden")) {
-    setView("detail");
-  }
-
-  if (event.key === "Escape" && !aboutPanel.classList.contains("hidden")) {
-    aboutPanel.classList.add("hidden");
-    aboutPanel.setAttribute("aria-hidden", "true");
+    setView(returnView);
   }
 
   if (event.key === "ArrowDown" && !views.fullscreen.classList.contains("hidden")) {
