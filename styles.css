@@ -414,7 +414,7 @@ img {
 
 .site-footer p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.98rem;
   color: var(--muted);
   line-height: 1;
   text-align: left;
@@ -640,17 +640,17 @@ img {
 
   .fullscreen-nav {
     top: auto;
-    bottom: 34px;
+    bottom: 74px;
     transform: none;
     font-size: 1.35rem;
   }
 
   .fullscreen-prev {
-    left: calc(50% - 42px);
+    left: calc(50% - 28px);
   }
 
   .fullscreen-next {
-    right: calc(50% - 42px);
+    right: calc(50% - 28px);
   }
 
   .fullscreen-slide {
@@ -658,9 +658,14 @@ img {
   }
 
   .fullscreen-caption {
-    bottom: 10px;
-    font-size: 0.9rem;
-    white-space: normal;
+    bottom: 38px;
+    width: calc(100% - 48px);
+    font-size: 0.82rem;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .site-footer {
@@ -668,6 +673,6 @@ img {
   }
 
   .site-footer p {
-    font-size: 0.78rem;
+    font-size: 0.9rem;
   }
 }
